@@ -6,13 +6,14 @@ h1 {
   color: black;
   font-family: "Montserrat", sans-serif;
 }
-h2 {
+h4 {
   color: black;
   font-family: "Montserrat", sans-serif;
 }
 p {
   color: black;
   font-family: "Montserrat", sans-serif;
+  font-size: small;
 }
 
 #extra-box {

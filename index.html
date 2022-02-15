@@ -2,17 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Manager Dashboard</title>
+    <title>Project Tracking Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Manager Dashboard</h1>
+    <h1>Project Tracking Dashboard</h1>
+    <h4>
+      Today is
+      <script src="date.js"></script>
+    </h4>
+    <div>
+      <canvas
+        id="myChart"
+        style="width: 100%; max-width: 750px; max-height: 400px"
+      ></canvas>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </div>
+    <script>
+      const labels = [
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+      ];
+
+      const data = {
+        labels: labels,
+        datasets: [
+          {
+            label: "Percent Complete",
+            backgroundColor: "rgb(255, 99, 132)",
+            borderColor: "rgb(255, 99, 132)",
+            data: [8, 17, 25, 33, 42, 50, 58, 67, 75, 83, 92, 100],
+          },
+          {
+            label: "test",
+            backgroundColor: "rgb(195, 155, 211)",
+            borderColor: "rgb(195, 155, 211)",
+            data: [50, 12, 23, 66, 82, 5, 34, 77, 91, 42, 17, 62],
+          },
+        ],
+      };
+
+      const config = {
+        type: "bar",
+        data: data,
+        options: {
+          indexAxis: "y",
+        },
+      };
+    </script>
+    <script>
+      const myChart = new Chart(document.getElementById("myChart"), config);
+    </script>
+
     <div class="container"></div>
     <script src="main.js"></script>
-    <h2>Today's Date</h2>
-    <span class="p">
-      <script src="date.js"></script>
-    </span>
   </body>
 </html>
