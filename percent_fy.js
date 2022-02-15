@@ -5,35 +5,32 @@ var yyyy = today.getFullYear();
 
 today = mm + "/" + dd + "/" + yyyy;
 
-const months = (month) => {
+const percent_fy = (month) => {
   if (month == "01") {
-    return "January";
+    return 58;
   } else if (month == "02") {
-    return "February";
+    return 67;
   } else if (month == "03") {
-    return "March";
+    return 75;
   } else if (month == "04") {
-    return "April";
+    return 83;
   } else if (month == "05") {
-    return "May";
+    return 92;
   } else if (month == "06") {
-    return "June";
+    return 100;
   } else if (month == "07") {
-    return "July";
+    return 8;
   } else if (month == "08") {
-    return "August";
+    return 17;
   } else if (month == "09") {
-    return "September";
+    return 25;
   } else if (month == "10") {
-    return "October";
+    return 33;
   } else if (month == "11") {
-    return "November";
+    return 42;
   } else if (month == "12") {
-    return "December";
+    return 50;
   }
 };
 
-//write name of previous month, which is where data will be from
-// may need to depend on date of update in database because it will be looking for
-// misisng info in the beginning of the month until budgets and monthly reports are updated
-document.write(months(mm - 1));
+export default percent_fy(mm - 1);
