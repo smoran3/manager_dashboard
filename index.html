@@ -9,7 +9,7 @@
   <body>
     <h1>Project Tracking Dashboard</h1>
     <h4>
-      Today is
+      Project Information for
       <script src="date.js"></script>
     </h4>
     <div>
@@ -20,35 +20,24 @@
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </div>
     <script>
-      const labels = [
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-      ];
+      const labels = ["0%", "25%", "50%", "75%", "100%"];
 
       const data = {
-        labels: labels,
+        labels: [
+          "Fiscal Year",
+          "MAD Program",
+          "Pottstown",
+          "Bike-Friendly Resurfacing",
+          "Cecil B Moore",
+          "Evaluating Ferry Service",
+          "SEPTA Rail Equity",
+        ],
         datasets: [
           {
-            label: "Percent Complete",
-            backgroundColor: "rgb(255, 99, 132)",
-            borderColor: "rgb(255, 99, 132)",
-            data: [8, 17, 25, 33, 42, 50, 58, 67, 75, 83, 92, 100],
-          },
-          {
-            label: "test",
-            backgroundColor: "rgb(195, 155, 211)",
-            borderColor: "rgb(195, 155, 211)",
-            data: [50, 12, 23, 66, 82, 5, 34, 77, 91, 42, 17, 62],
+            //label: "Fiscal Year",
+            data: [58, 47, 60, 52, 63, 46, 73],
+            backgroundColor: ["rgb(245, 176, 65)", "rgb(52, 152, 219)"],
+            borderColor: ["rgb(245, 176, 65)", "rgb(52, 152, 219)"],
           },
         ],
       };
@@ -56,8 +45,17 @@
       const config = {
         type: "bar",
         data: data,
+
         options: {
           indexAxis: "y",
+          plugins: { legend: { display: false } },
+          title: { display: true, text: "Project Spending" },
+          scales: {
+            x: {
+              min: 0,
+              max: 100,
+            },
+          },
         },
       };
     </script>
