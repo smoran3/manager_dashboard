@@ -3,6 +3,32 @@
 
 const labels = ["0%", "25%", "50%", "75%", "100%"];
 
+//let array = ["23-52-030", "23-52-150", "23-52-120", "23-52-140"];
+//let wp_url = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/23-52-030";
+
+async function populate() {
+  const wp_url =
+    "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/23-52-030";
+  const request = new Request(wp_url);
+  const response = await fetch(request);
+  const results = await response.json();
+
+  populateNames(results);
+  //populateSpent(results);
+}
+
+function populateNames(obj) {
+  const nameList = document.querySelector("ul");
+  for (const project of obj.projects) {
+    const listItem = document.createElement("li");
+    listItem.appendChild(project.pro_name);
+    nameList.appendChild(listItem);
+  }
+  return nameList;
+}
+
+populate();
+
 const data = {
   labels: [
     "Fiscal Year",

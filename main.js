@@ -4,16 +4,7 @@ let array = ["23-52-030", "23-52-150", "23-52-120", "23-52-140"];
 let wp_url = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/";
 let update_url = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projectupdates/";
 
-async function getInfo(url) {
-  try {
-    let res = await fetch(url);
-    return await res.json();
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-async function getUpdate(url) {
+async function getData(url) {
   try {
     let res = await fetch(url);
     return await res.json();
@@ -27,8 +18,8 @@ async function render() {
   for (var i in array) {
     //let i_url = wp_url.concat(array[i]);
     let u_url = update_url.concat(array[i]);
-    //let i = await getInfo(i_url);
-    let u = await getUpdate(u_url);
+    //let i = await getData(i_url);
+    let u = await getData(u_url);
     let htmlSegment = `<div class = "test"> 
     <p>Project Code: ${u.proid} </br> Month: ${u.month1}</br> Monthly Report: ${u.notes}</p> 
     </div>`;
@@ -40,32 +31,7 @@ async function render() {
   }
 }
 render();
-/*
-async function render(Resp1, Resp2) {
-  let html = "";
-  let htmlSegment = `<p>Project Code: ${Resp2.proid}:  Project Name: ${Resp1.proname}</p> `;
-  html += htmlSegment;
-  let container = document.querySelector(".container");
-  container.innerHTML = html;
-}
 
-async function getData() {
-  let wpCall = fetch(
-    "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/23-52-030"
-  );
-  let updateCall = fetch(
-    "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projectupdates/23-52-030"
-  );
-
-  Promise.all([wpCall, updateCall])
-    .then((values) => Promise.all(values.map((value) => value.json())))
-    .then((finalVals) => {
-      let wpResp = finalVals[0];
-      let updateResp = finalVals[1];
-    });
-  render(wpResp, updateResp);
-}
-*/
 //render();
 /*
 async function getPublication(url) {
