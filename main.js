@@ -26,7 +26,7 @@ async function render() {
 
     html += htmlSegment;
 
-    let container = document.querySelector(".container");
+    let container = document.querySelector("#progress");
     container.innerHTML = html;
   }
 }

@@ -1,45 +1,32 @@
-/*
-async function populate() {
-  const wp_url =
-    "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/23-52-030";
-  const request = new Request(wp_url);
-  const response = await fetch(request);
-  const results = await response.json();
+const ids = ["23-52-030", "23-52-150", "23-52-120", "23-52-140"];
+const WP_URL = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/";
 
-  populateNames(results);
-  //populateSpent(results);
-}
+function renderProgramList(programs) {
+  let html = "";
+  for (program of programs) {
+    if (! program.error){
+      let htmlSegment = `<div class = "test"> 
+        <p>${program.proid} - <b>${program.proname}</b></br> 
+        Description: ${program.description}</p>
+        </div>`;
 
-function populateNames(obj) {
-  const nameList = document.querySelector("ul");
-  for (const project of obj) {
-    const listItem = document.createElement("li");
-    listItem.appendChild(project.pro_name);
-    nameList.appendChild(listItem);
+      html += htmlSegment;
+    }
+    
   }
-  return nameList;
+  let container = document.querySelector("#list");
+  container.innerHTML = html;
 }
 
-document.getElementById("foo").appendChild(populate());
-*/
+const getWPs = id =>
+  fetch(`${WP_URL}/${id}`).then(response => response.json());
 
-let nameList = ["test", "test2"];
+const promises = ids.map(id => getWPs(id));
 
-fetch("https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/23-52-030")
-  .then(function (response) {
-    return response.json();
-  })
-  .then((data) => {
-    var list = document.getElementById("names");
-    data.results.forEach((item) => {
-      nameList.push(item.proname);
-      let li = document.createElement("li");
-      li.innerText = item.proname;
-      list.appendChild(li);
-    });
-    console.log(nameList);
-  })
-  .catch((err) => {
-    console.log("Error fetching: ${err}");
-  });
-document.write(nameList);
+const allPromisesWithErrorHandler = promises.map(promise =>
+  promise.catch(error => error) 
+);
+
+Promise.all(allPromisesWithErrorHandler)
+  .then(programs => renderProgramList(programs))
+  .catch(err => console.log(err));
