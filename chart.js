@@ -55,13 +55,33 @@ const data = {
     },
   ],
 };
+
+const annotation1 = {
+  type: "line",
+  borderColor: "black",
+  borderWidth: 3,
+  label: {
+    backgroundColor: "red",
+    content: "Fiscal Year Progress",
+    display: true,
+  },
+  scaleID: "x",
+  value: 56,
+};
+
 const config = {
   type: "bar",
   data: data,
-
   options: {
     indexAxis: "y",
-    plugins: { legend: { display: false } },
+    plugins: {
+      legend: { display: false },
+      annotation: {
+        annotations: {
+          annotation1,
+        },
+      },
+    },
     title: { display: true, text: "Project Spending" },
     scales: {
       x: {
