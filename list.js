@@ -7,7 +7,6 @@ function renderProgramList(programs) {
     if (!program.error) {
       let htmlSegment = `<div class = "test"> 
         <p>${program.proid}: <b>${program.proname}</b></br> 
-        Description: ${program.description}</p>
         </div>`;
 
       html += htmlSegment;

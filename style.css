@@ -3,16 +3,24 @@ body {
 }
 
 h1 {
-  color: black;
-  font-family: "Montserrat", sans-serif;
+  color: #0078ae;
+  font-family: "Arial";
+}
+h2 {
+  color: #67abd0;
+  font-family: "Arial";
+}
+h3 {
+  color: #67abd0;
+  font-family: "Arial";
 }
 h4 {
-  color: black;
-  font-family: "Montserrat", sans-serif;
+  color: #67abd0;
+  font-family: "Arial";
 }
 p {
   color: black;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Arial";
   font-size: small;
 }
 
@@ -22,4 +30,41 @@ p {
   top: 75px;
   width: 200px;
   border: white 2px solid;
+}
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.lcolumn {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.rcolumn {
+  float: right;
+  width: 50%;
+  padding: 10px;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
 }
