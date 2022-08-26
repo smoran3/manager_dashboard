@@ -65,7 +65,7 @@ const annotation1 = {
     content: "Fiscal Year Progress",
     display: true,
   },
-  scaleID: "x",
+  scaleID: "xAxis",
   value: 56,
 };
 
@@ -84,7 +84,7 @@ const config = {
     },
     title: { display: true, text: "Project Spending" },
     scales: {
-      x: {
+      xAxis: {
         min: 0,
         max: 100,
         title: {
