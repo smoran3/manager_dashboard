@@ -1,9 +1,11 @@
+let wp_url = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/";
 import { pro_ids, pro_names } from "./sample_list.js";
 let array = pro_ids;
 let names = pro_names;
 //let array = ["23-52-030", "23-52-150", "23-52-120", "23-52-140"];
-let wp_url = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/";
 //let update_url = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projectupdates/";
+
+let spent_list = [];
 
 async function getData(url) {
   try {
@@ -14,22 +16,36 @@ async function getData(url) {
   }
 }
 
-let list = document.getElementById("spending");
-
-async function spendingList(ids) {
-  for (var i in ids) {
-    let wp_url = wp_url.concat(ids[i]);
-    let w = await getData(wp_url);
-    list.push(w[i].complete);
-
-    //let htmlSegment = `<div class = "test">
-    //<p>${w.complete}: ${n}  </br> Month: ${w.completedate}</p>
-    //</div>`;
-
-    //let container = document.querySelector("#spending");
-    //container.innerHTML = html;
+async function percent_spent() {
+  var spent_list = [];
+  for (var i in array) {
+    let w_url = wp_url.concat(array[i]);
+    let w = await getData(w_url);
+    spent_list.push(w.complete * 20);
+    return spent_list;
+    //let container = document.querySelector("#spent");
+    //container.innerHTML = spent_list;
   }
 }
-spendingList(pro_ids);
+//percent_spent();
 
-//not render, but export list
+async function spending_date() {
+  var spent_date = [];
+  for (var i in array) {
+    let w_url = wp_url.concat(array[i]);
+    let w = await getData(w_url);
+    spent_date.push(
+      w.completedate[5] +
+        w.completedate[6] +
+        "/" +
+        w.completedate[8] +
+        w.completedate[9]
+    );
+    return spent_date;
+    //let container = document.querySelector("#spent_date");
+    //container.innerHTML = spent_date;
+  }
+}
+//spending_date();
+
+export { percent_spent, spending_date };

@@ -1,12 +1,14 @@
 import { pro_ids, pro_names } from "./sample_list.js";
+import { percent_spent } from "./get_values.js";
 //let array = pro_ids;
 let names = pro_names;
+let values = percent_spent();
 
 const data = {
   labels: names,
   datasets: [
     {
-      data: [47, 60, 52, 63],
+      data: values,
       backgroundColor: "#0078AE",
     },
   ],
