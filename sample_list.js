@@ -5,3 +5,4 @@ export const pro_names = [
   "PennDOT Road Diet Prioritization",
   "Pottstown Area Regional Plan Development",
 ];
+export const test_vals = [5, 15, 3, 24];

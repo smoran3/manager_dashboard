@@ -1,8 +1,8 @@
-import { pro_ids, pro_names } from "./sample_list.js";
+import { pro_ids, pro_names, test_vals } from "./sample_list.js";
 import { percent_spent } from "./get_values.js";
-//let array = pro_ids;
 let names = pro_names;
 let values = percent_spent();
+//[5, 20, 16, 8];
 
 const data = {
   labels: names,
@@ -10,6 +10,7 @@ const data = {
     {
       data: values,
       backgroundColor: "#0078AE",
+      barThickness: 25,
     },
   ],
 };

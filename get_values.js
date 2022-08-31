@@ -27,8 +27,9 @@ async function percent_spent() {
     //container.innerHTML = spent_list;
   }
 }
-//percent_spent();
-
+percent_spent();
+export { percent_spent };
+/*
 async function spending_date() {
   var spent_date = [];
   for (var i in array) {
@@ -47,5 +48,6 @@ async function spending_date() {
   }
 }
 //spending_date();
+*/
 
-export { percent_spent, spending_date };
+//export var spent;
