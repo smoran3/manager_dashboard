@@ -17,15 +17,10 @@ const data = {
 
 const annotation1 = {
   type: "line",
-  borderColor: "black",
-  borderWidth: 3,
-  label: {
-    backgroundColor: "red",
-    content: "Fiscal Year Progress",
-    display: true,
-  },
+  borderColor: "gray",
+  borderWidth: 2,
   scaleID: "xAxis",
-  value: 56,
+  value: 10,
 };
 
 const config = {
@@ -63,4 +58,20 @@ const config = {
   },
 };
 
-const myChart = new Chart(document.getElementById("chart"), config);
+const ctx = document.getElementById("myChart");
+const myChart = new Chart(ctx, config);
+
+function clickHandler(click) {
+  //console.log("i clicked");
+  const points = myChart.getElementAtEventForMode(
+    click,
+    "nearest",
+    {
+      intersect: true,
+    },
+    true
+  );
+  console.log(points);
+}
+
+ctx.onclick = clickHandler;

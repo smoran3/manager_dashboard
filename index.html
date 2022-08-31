@@ -14,16 +14,21 @@
     </h3>
 
     <div class="lcolumn">
-      <canvas id="chart" style="width: 50%; max-height: 300px"></canvas>
+      <canvas id="myChart" style="width: 50%; height: 33%"></canvas>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/2.0.1/chartjs-plugin-annotation.min.js"
+        integrity="sha512-LZEOcU8s74hwWva82MJux7GgFNjfeExXG9yZPQrKz567Od4O2D/6UX3oGoZiRDOdbMtH33NBq7vonH4VOUPA/Q=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
       <script type="module" src="chart.js"></script>
       <script type="module" src="get_values.js"></script>
     </div>
 
     <div class="rcolumn">
       <div class="card">
-        <canvas style="max-height: 300px"></canvas>
+        <canvas style="width: 50%; height: 33%"></canvas>
         <div class="container">
           <h2>Project Name</h2>
           <h4><b>Monthly Report</b></h4>
@@ -33,6 +38,7 @@
     </div>
 
     <div class="container">
+      <h3>Monthly Progress Reports</h3>
       <div id="progress"></div>
       <div id="spent"></div>
       <div id="spent_date"></div>

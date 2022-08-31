@@ -21,7 +21,8 @@ async function render() {
     let u_url = update_url.concat(array[i]);
     let u = await getData(u_url);
     let htmlSegment = `<div class = "test"> 
-    <p>${u.proid}: ${n}  </br> Month: ${u.month1}</br> Monthly Report: ${u.notes}</p> 
+    <p><b>${u.proid}: ${n}</b></p>  
+    <p>${u.notes}</p> 
     </div>`;
 
     html += htmlSegment;

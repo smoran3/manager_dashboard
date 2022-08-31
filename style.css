@@ -23,6 +23,12 @@ p {
   font-family: "Arial";
   font-size: small;
 }
+b {
+  color: black;
+  font-family: "Arial";
+  font-size: small;
+  font-weight: bold;
+}
 
 #extra-box {
   position: fixed;
