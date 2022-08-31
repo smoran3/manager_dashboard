@@ -21,13 +21,13 @@ async function percent_spent() {
   for (var i in array) {
     let w_url = wp_url.concat(array[i]);
     let w = await getData(w_url);
-    spent_list.push(w.complete * 20);
-    return spent_list;
+    spent_list.push(w.complete * 20);  
     //let container = document.querySelector("#spent");
     //container.innerHTML = spent_list;
   }
+  return spent_list;
 }
-percent_spent();
+
 export { percent_spent };
 /*
 async function spending_date() {
