@@ -24,6 +24,17 @@ function renderProgramList(programs) {
   }
 }
 
+fetch(WP_URL)
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    renderProgramList(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+/*
 const getWPs = (id) =>
   fetch(`${WP_URL}/${id}`).then((response) => response.json());
 
@@ -36,5 +47,6 @@ const allPromisesWithErrorHandler = promises.map((promise) =>
 Promise.all(allPromisesWithErrorHandler)
   .then((programs) => renderProgramList(programs))
   .catch((err) => console.log(err));
+  */
 
 //put all this in a DB by user
