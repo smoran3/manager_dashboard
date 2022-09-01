@@ -2,18 +2,26 @@ const ids = ["23-52-030", "23-52-150", "23-52-120", "23-52-140"];
 const WP_URL = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/";
 
 function renderProgramList(programs) {
-  let html = "";
-  for (program of programs) {
-    if (!program.error) {
-      let htmlSegment = `<div class = "test"> 
-        <p>${program.proid}: <b>${program.proname}</b></br> 
-        </div>`;
-
-      html += htmlSegment;
+  for (var i in programs) {
+    if (!programs[i].error) {
+      const proj = programs[i].proid;
+      const projname = programs[i].proname;
+      var tbodyRef = document
+        .getElementById("table")
+        .getElementsByTagName("tbody")[0];
+      var newRow = tbodyRef.insertRow();
+      var boxCell = newRow.insertCell();
+      var idCell = newRow.insertCell();
+      var nameCell = newRow.insertCell();
+      var box = document.createElement("input");
+      box.setAttribute("type", "checkbox");
+      var idText = document.createTextNode(proj);
+      var nameText = document.createTextNode(projname);
+      boxCell.appendChild(box);
+      idCell.appendChild(idText);
+      nameCell.appendChild(nameText);
     }
   }
-  let container = document.querySelector("#list");
-  container.innerHTML = html;
 }
 
 const getWPs = (id) =>
@@ -28,3 +36,5 @@ const allPromisesWithErrorHandler = promises.map((promise) =>
 Promise.all(allPromisesWithErrorHandler)
   .then((programs) => renderProgramList(programs))
   .catch((err) => console.log(err));
+
+//put all this in a DB by user
