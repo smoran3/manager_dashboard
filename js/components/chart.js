@@ -1,4 +1,4 @@
-import { pro_ids, pro_names, test_vals } from "../helpers/sample_list.js";
+import { pro_names } from "../helpers/sample_list.js";
 import { percent_spent } from "../helpers/get_values.js";
 let names = pro_names;
 let values = await percent_spent();
