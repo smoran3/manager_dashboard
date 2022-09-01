@@ -1,4 +1,4 @@
-const WP_URL = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/";
+//const WP_URL = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/";
 
 function renderProgramList(programs) {
   for (var i in programs) {
@@ -23,16 +23,8 @@ function renderProgramList(programs) {
   }
 }
 
-fetch(WP_URL)
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    renderProgramList(data);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+export { renderProgramList };
+
 /*
 const getWPs = (id) =>
   fetch(`${WP_URL}/${id}`).then((response) => response.json());
