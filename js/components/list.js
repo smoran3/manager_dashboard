@@ -1,4 +1,3 @@
-const ids = ["23-52-030", "23-52-150", "23-52-120", "23-52-140"];
 const WP_URL = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/";
 
 function renderProgramList(programs) {

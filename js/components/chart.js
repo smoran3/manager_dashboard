@@ -1,5 +1,5 @@
-import { pro_ids, pro_names, test_vals } from "./sample_list.js";
-import { percent_spent } from "./get_values.js";
+import { pro_ids, pro_names, test_vals } from "../helpers/sample_list.js";
+import { percent_spent } from "../helpers/get_values.js";
 let names = pro_names;
 let values = await percent_spent();
 //[5, 20, 16, 8];

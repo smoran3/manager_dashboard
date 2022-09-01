@@ -1,8 +1,6 @@
-import { pro_ids, pro_names } from "./sample_list.js";
+import { pro_ids, pro_names } from "../helpers/sample_list.js";
 let array = pro_ids;
 let names = pro_names;
-//let array = ["23-52-030", "23-52-150", "23-52-120", "23-52-140"];
-//et wp_url = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projects/";
 let update_url = "https://dvrpc-linuxdev.dvrpc.org/wp/2023/pm-projectupdates/";
 
 async function getData(url) {
