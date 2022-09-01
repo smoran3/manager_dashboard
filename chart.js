@@ -64,6 +64,7 @@ const myChart = new Chart(ctx, config);
 function highlightBar(click) {
   const color = ["#0078AE"];
   myChart.config.data.datasets[0].backgroundColor = color;
+  myChart.config.data.datasets[0].borderColor = ["white"];
   //console.log("i clicked");
   const points = myChart.getElementsAtEventForMode(
     click,
@@ -84,6 +85,7 @@ function highlightBar(click) {
 
 ctx.onclick = highlightBar;
 
+/*
 function populateCard(click) {
   //console.log(click);
   const points = myChart.getElementsAtEventForMode(
@@ -103,4 +105,5 @@ function populateCard(click) {
     //console.log(title);
   }
 }
-myChart.canvas.onclick = populateCard;
+ctx.canvas.onclick = populateCard;
+*/
