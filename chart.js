@@ -97,6 +97,7 @@ function populateCard(click) {
     const index = points[0].index;
     const label = myChart.data.labels[index];
     const cardText = document.querySelectorAll("card")[0];
+    //need API call here?
     cardText.children[0].innerText = label;
 
     //console.log(title);

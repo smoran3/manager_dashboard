@@ -74,3 +74,19 @@ b {
 .container {
   padding: 2px 16px;
 }
+
+table {
+  margin-top: 10px;
+  font: Arial;
+}
+
+table,
+tr,
+th,
+td {
+  padding: 10px;
+  border: 1px solid #666;
+  width: 50%;
+  border-collapse: collapse;
+  font: Arial;
+}
