@@ -61,9 +61,11 @@ const config = {
 const ctx = document.getElementById("myChart");
 const myChart = new Chart(ctx, config);
 
-function clickHandler(click) {
+function highlightBar(click) {
+  const color = ["#0078AE"];
+  myChart.config.data.datasets[0].backgroundColor = color;
   //console.log("i clicked");
-  const points = myChart.getElementAtEventForMode(
+  const points = myChart.getElementsAtEventForMode(
     click,
     "nearest",
     {
@@ -71,7 +73,33 @@ function clickHandler(click) {
     },
     true
   );
-  console.log(points);
+  //console.log(points.index);
+  if (points[0]) {
+    myChart.data.datasets[points[0].datasetIndex].backgroundColor[
+      points[0].index
+    ] = "black";
+  }
+  myChart.update();
 }
 
-ctx.onclick = clickHandler;
+ctx.onclick = highlightBar;
+
+function populateCard(click) {
+  //console.log(click);
+  const points = myChart.getElementsAtEventForMode(
+    click,
+    "nearest",
+    { intersect: true },
+    true
+  );
+  if (points[0]) {
+    const dataset = points[0].datasetIndex;
+    const index = points[0].index;
+    const label = myChart.data.labels[index];
+    const cardText = document.querySelectorAll("card")[0];
+    cardText.children[0].innerText = label;
+
+    //console.log(title);
+  }
+}
+myChart.canvas.onclick = populateCard;
