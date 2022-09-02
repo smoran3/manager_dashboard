@@ -36,4 +36,4 @@ const months = (month) => {
 //write name of previous month, which is where data will be from
 // may need to depend on date of update in database because it will be looking for
 // misisng info in the beginning of the month until budgets and monthly reports are updated
-document.write(months(mm - 1));
+export { months };
