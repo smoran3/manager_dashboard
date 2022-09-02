@@ -46,6 +46,17 @@ b {
   margin-right: -5px;
 }
 
+#reports {
+  padding-top: 25px;
+  clear: both;
+}
+
+/* Rounded dividing line */
+hr.rounded {
+  border-top: 5px solid #bbb;
+  border-radius: 5px;
+}
+
 .lcolumn {
   float: left;
   width: 50%;

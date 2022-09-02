@@ -7,43 +7,47 @@
     <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>DVRPC Project Tracking Dashboard</h1>
-    <h3>
-      Project Information for
-      <script src="./js/helpers/date.js"></script>
-    </h3>
+    <div id="main">
+      <script type="module" src="js/index.js"></script>
+      <h1>DVRPC Project Tracking Dashboard</h1>
+      <h3>
+        Project Information for
+        <script src="./js/helpers/date.js"></script>
+      </h3>
 
-    <div class="lcolumn">
-      <canvas id="myChart" style="width: 50%; height: 33%"></canvas>
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/2.0.1/chartjs-plugin-annotation.min.js"
-        integrity="sha512-LZEOcU8s74hwWva82MJux7GgFNjfeExXG9yZPQrKz567Od4O2D/6UX3oGoZiRDOdbMtH33NBq7vonH4VOUPA/Q=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      ></script>
-      <script type="module" src="./js/components/chart.js"></script>
-      <script type="module" src="./js/helpers/get_values.js"></script>
-    </div>
+      <div class="lcolumn">
+        <canvas id="myChart" style="width: 50%; height: 33%"></canvas>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/2.0.1/chartjs-plugin-annotation.min.js"
+          integrity="sha512-LZEOcU8s74hwWva82MJux7GgFNjfeExXG9yZPQrKz567Od4O2D/6UX3oGoZiRDOdbMtH33NBq7vonH4VOUPA/Q=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        ></script>
+        <script type="module" src="./js/components/chart.js"></script>
+        <script type="module" src="./js/helpers/get_values.js"></script>
+      </div>
 
-    <div class="rcolumn">
-      <div class="card">
-        <canvas style="width: 50%; height: 33%"></canvas>
-        <div class="container">
-          <h2>Project Name</h2>
-          <h4><b>Monthly Report</b></h4>
-          <p>blah blah blah</p>
+      <div class="rcolumn">
+        <div class="card">
+          <canvas style="width: 50%; height: 33%"></canvas>
+          <div class="container">
+            <h2>Project Name</h2>
+            <h4><b>Monthly Report</b></h4>
+            <p>blah blah blah</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <h3>Monthly Progress Reports</h3>
-      <div id="progress"></div>
-      <div id="spent"></div>
-      <div id="spent_date"></div>
-    </div>
+      <div id="reports">
+        <hr class="rounded" />
+        <h3>Monthly Progress Reports</h3>
+        <div id="progress"></div>
+        <div id="spent"></div>
+        <div id="spent_date"></div>
+      </div>
 
-    <script type="module" src="./js/components/monthly_reports.js"></script>
+      <script type="module" src="./js/components/monthly_reports.js"></script>
+    </div>
   </body>
 </html>
